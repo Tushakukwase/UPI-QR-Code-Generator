@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI QR Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>UPI QR Code Generator</h1>
+            <form id="upiForm">
+                <div class="form-group">
+                    <label for="upiId">UPI ID</label>
+                    <input type="text" id="upiId" placeholder="yourname@upi" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name/Business Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount (Optional)</label>
+                    <input type="number" id="amount" placeholder="Enter amount">
+                </div>
+                <button type="submit" class="generate-btn">Generate QR Code</button>
+            </form>
+            
+            <div id="result" class="result-container hidden">
+                <div class="qr-container">
+                    <img id="qrCode" src="" alt="UPI QR Code">
+                </div>
+                <div class="details">
+                    <p id="upiLink" class="upi-link"></p>
+                    <button id="downloadBtn" class="download-btn">Download QR Code</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
